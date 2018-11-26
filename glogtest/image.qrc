@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>icons/batterystate.jpg</file>
+        <file>icons/parallbreak.jpg</file>
+        <file>icons/parallconnect.jpg</file>
+        <file>icons/parallstate.jpg</file>
+        <file>icons/powerbreak.jpg</file>
+        <file>icons/powerconnet.jpg</file>
+        <file>icons/powerstate.jpg</file>
+        <file>icons/sdstate.jpg</file>
+        <file>icons/serialbreak.jpg</file>
+        <file>icons/serialconnect.jpg</file>
+        <file>icons/serialstate.jpg</file>
+        <file>icons/usbbreak.jpg</file>
+        <file>icons/usbconnect.jpg</file>
+        <file>icons/usbstate.jpg</file>
+    </qresource>
+</RCC>

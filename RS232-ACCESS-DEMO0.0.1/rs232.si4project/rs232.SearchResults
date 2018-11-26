@@ -1,0 +1,10 @@
+---- requestData Matches (9 in 3 files) ----
+MainWindow::displayRxData in mainwindow.cpp (ZIGBEE-ACCESS) :     if(threadA.requestData.size()>0)
+MainWindow::displayRxData in mainwindow.cpp (ZIGBEE-ACCESS) :         buf=threadA.requestData.data();
+MainWindow::displayRxData in mainwindow.cpp (ZIGBEE-ACCESS) :         qDebug() << "receive num:" <<threadA.requestData.size();
+MainWindow::displayRxData in mainwindow.cpp (ZIGBEE-ACCESS) :         for(var=0;var<threadA.requestData.size();var++)
+MainWindow::displayRxData in mainwindow.cpp (ZIGBEE-ACCESS) :     threadA.requestData.clear();
+MyThread::run in mythread.cpp (ZIGBEE-ACCESS) :                     requestData = my_serialport->readAll();
+MyThread::run in mythread.cpp (ZIGBEE-ACCESS) :                     requestData += my_serialport->readAll();
+MyThread::run in mythread.cpp (ZIGBEE-ACCESS) :         requestData = my_serialport->readAll();
+MyThread in mythread.h (ZIGBEE-ACCESS) :     QByteArray requestData;

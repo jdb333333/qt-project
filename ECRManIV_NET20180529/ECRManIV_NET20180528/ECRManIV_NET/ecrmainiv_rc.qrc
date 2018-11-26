@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>icons/clerk.png</file>
+        <file>icons/dept.png</file>
+        <file>icons/plu.png</file>
+        <file>icons/disc.png</file>
+        <file>icons/print.png</file>
+        <file>icons/LinkToPC.png</file>
+        <file>icons/eutron24.png</file>
+        <file>icons/tax.png</file>
+        <file>icons/group.png</file>
+        <file>icons/tailer.png</file>
+        <file>icons/dailyreportoff.png</file>
+        <file>icons/dailyreporton.png</file>
+        <file>icons/weekreportoff.png</file>
+        <file>icons/weekreporton.png</file>
+        <file>icons/clerkreportoff.png</file>
+        <file>icons/clerkreporton.png</file>
+        <file>icons/clerkweekreportoff.png</file>
+        <file>icons/clerkweekreporton.png</file>
+        <file>icons/timereportoff.png</file>
+        <file>icons/timereporton.png</file>
+        <file>icons/plureportoff.png</file>
+        <file>icons/plureporton.png</file>
+    </qresource>
+</RCC>

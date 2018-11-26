@@ -1,0 +1,25 @@
+QTableWidget{
+    color: white;                                       /*表格内文字颜色*/
+    gridline-color: black;                              /*表格内框颜色*/
+    background-color: rgb(108, 108, 108);               /*表格内背景色*/
+    alternate-background-color: rgb(64, 64, 64);
+    selection-color: white;                             /*选中区域的文字颜色*/
+    selection-background-color: rgb(77, 77, 77);        /*选中区域的背景色*/
+    border: 2px groove gray;
+    border-radius: 0px;
+    padding: 2px 4px;
+}
+
+QHeaderView{
+    font-size:16px;
+}
+ 
+QHeaderView::section {
+    color: white;
+    padding: 4px;
+    height:24px;
+    border: 0px solid #567dbc;
+    border-left:0px;
+    border-right:0px;
+    background: #2c3e50;/*default*/
+}

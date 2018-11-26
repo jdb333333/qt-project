@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>icons/clerk.png</file>
+        <file>icons/dept.png</file>
+        <file>icons/plu.png</file>
+        <file>icons/disc.png</file>
+        <file>icons/print.png</file>
+        <file>icons/LinkToPC.png</file>
+        <file>icons/eutron24.png</file>
+        <file>icons/tax.png</file>
+        <file>icons/group.png</file>
+    </qresource>
+</RCC>

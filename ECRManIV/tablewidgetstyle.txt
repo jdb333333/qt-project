@@ -1,0 +1,11 @@
+QTableWidget{
+            color: white;
+            gridline-color: white;
+            background: #2c2c2d;
+            alternate-background: #3A3A3C;
+            selection-color: red;
+            selection-background-color: #595a5c;
+            border: 2px groove gray;
+            border-radius: 0px;
+            padding: 2px 4px;
+            }

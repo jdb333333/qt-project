@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\dialog.o
+./release\serverthread.o
+./release\server.o
+./release\mysocket.o
+./release\flowbilldb.o
+./release\connectionpool.o
+./release\moc_dialog.o
+./release\moc_serverthread.o
+./release\moc_server.o
+./release\moc_mysocket.o
+);

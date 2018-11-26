@@ -1,0 +1,161 @@
+#ifndef REPORTDB_H
+#define REPORTDB_H
+
+#include <QObject>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QStandardItemModel>
+#include <QDateTime>
+
+#define GRANDTOTALREPORT    0x1
+#define DEPARTMENTREPORT    0x2
+#define TENDERREPORT        0x4
+#define DRAWERREPORT        0x8
+#define CORRECTREPORT       0x10
+#define DISCOUNTREPORT      0x20
+#define TAXREPORT           0x40
+#define PLUREPORT           0x80
+
+#define DAILYREPORT         0x1
+#define WEEKREPORT          0x2
+#define ZONEREPORT          0x10
+#define CLERKDAILY          0x20
+#define CLERKWEEK           0x40
+#define PLUDAILY            0x80
+
+#define GRANDTOTAL          "grandtotal"
+#define DEPARTMENT          "department"
+#define TENDER              "tender"
+#define DRAWER              "drawer"
+#define CORRECT             "correction"
+#define DISCOUNT            "discount"
+#define TAX                 "tax"
+#define PLU                 "plu"
+
+#define CLERKNUM    5
+#define ZONENUM     12
+
+#define WRITEDBOK   0x8
+
+#define XREPORT  0x01
+#define ZREPORT  0x02
+
+class tcpthread;
+
+
+typedef struct reportdata{
+    int ID;
+    char IP[32];
+    char  Name[32];
+	char Code[32];
+    float Cc;
+    float Qty;
+    float Amt;
+    float Ret;
+    float Disc;
+    float Cost;
+    int ZNo;
+}RData;
+
+class reportdb : public QObject
+{
+    Q_OBJECT
+public:
+    explicit reportdb(QObject *parent = 0);
+    ~reportdb();
+
+    int connectdb();
+    int disconnectdb();
+    void dbtransaction();
+    void dbcommit();
+
+    int writetable(QString suffixtablename, int idx, unsigned int options, RData data);
+    int writetable2(QString suffixtablename, int idx, unsigned int options, RData data);
+    int readtable(QString suffixtablename, unsigned int options, int ZNo = 1,
+                  RData *data = NULL, QStandardItemModel *reportModel = NULL, char Type = GRANDTOTALREPORT);
+
+    int cleartable();
+
+    int datadeal(char *buf, int len);
+
+	void SetDataType(char Tflag = 0x0){DataTableType = Tflag;}
+    int DataParse();
+    friend void dbthreadrun();
+
+    void setzno(int zno){ZNo = zno;}
+    void setcashid(int id){cashid = id;}
+    void setcaship(QString ip){IpStr = ip;}
+    void setcashname(QString shopname){ShopName = shopname;}
+
+    void SetDataTime(QDateTime pctime);
+    void setxzflag(int flag){XZFlag = flag;}
+	void setclerknum(int num){clerknum = num;}
+    void clearmaxdatatime(){MaxDatetime.clear();}//jdb2018-07-31 增加记录最近一次报表时间
+
+private:
+    int inserttable(QString tablename, RData data);
+    int updatatable(QString tablename, RData data);
+
+    int selecttable(QString tablename, unsigned int options, int ZNo, RData *data, QStandardItemModel *reportModel, int rows, char *Name, char Type);
+
+    float BcdToFloat(char *bcd, int len, int decimal);
+	void BcdToStr(char *bcd, int len, char *Str);
+
+private:
+    QSqlDatabase db;
+    QString dbPath;
+    QSqlQuery sql_query;
+    int ZNo;
+    int cashid;
+    QString ShopName;
+    QString IpStr;
+    bool flag;
+	char DataTableType;
+    QString MaxDatetime;
+
+    int initgrandtotal();
+    int initdepartment();
+    int inittender();
+    int initdrawer();
+    int initcorrect();
+    int initdiscount();
+    int inittax();
+    int initplu();
+
+    int inittotal(QString tablename);
+    int initdb();
+
+    int deleteitem(QString tablename);
+    int deleteitemByZNo(QString tablename, int ZNo);
+    int cleargrandtotal();
+    int cleardepartment();
+    int cleartender();
+    int cleardrawer();
+    int clearcorrect();
+    int cleardiscount();
+    int cleartax();
+    int clearplu();
+
+    friend class tcpthread;
+    tcpthread *dbThread;
+
+    QString DbSuffixTablename;
+    int DbIdx;
+    unsigned int DbOptions;
+    RData DbData;
+
+    char recvbuf[1024];
+    int recvlen;
+
+    QDateTime XZTime;
+    int XZFlag; //0x01 X REPORT
+                 //0x02 Z REPORT
+    int clerknum;
+
+signals:
+    void dbstate(int type);
+
+public slots:
+};
+
+#endif // REPORTDB_H

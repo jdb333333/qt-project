@@ -1,0 +1,4 @@
+---- readtable Matches (3 in 3 files) ----
+reportdb.cpp line 651 : int reportdb::readtable(QString suffixtablename, unsigned int options, int ZNo, RData *data, QStandardItemModel *reportModel, char Type)
+reportdb in reportdb.h :     int readtable(QString suffixtablename, unsigned int options, int ZNo = 1,
+reportDialog::creatreport in reportdialog.cpp :     MyDb->readtable(suffixname, Idx, ZNo, NULL, reportModel, Type);

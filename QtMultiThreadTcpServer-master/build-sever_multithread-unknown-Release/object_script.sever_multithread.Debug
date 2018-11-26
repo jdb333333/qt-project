@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\dialog.o
+./debug\serverthread.o
+./debug\server.o
+./debug\mysocket.o
+./debug\flowbilldb.o
+./debug\connectionpool.o
+./debug\moc_dialog.o
+./debug\moc_serverthread.o
+./debug\moc_server.o
+./debug\moc_mysocket.o
+);

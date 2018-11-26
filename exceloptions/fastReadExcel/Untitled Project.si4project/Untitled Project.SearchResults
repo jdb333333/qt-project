@@ -1,0 +1,10 @@
+---- setProperty Matches (9 in 1 files) ----
+ExcelBasePrivate::construct in ExcelBase.cpp (src\fastReadExcelInWindows) :     excel->setProperty("Visible",false);
+ExcelBase::kick in ExcelBase.cpp (src\fastReadExcelInWindows) :         d->excel->setProperty("Visible", true);
+ExcelBase::setVisible in ExcelBase.cpp (src\fastReadExcelInWindows) :         d->excel->setProperty("Visible", value);
+ExcelBase::setCaption in ExcelBase.cpp (src\fastReadExcelInWindows) :         d->excel->setProperty("Caption", value);
+ExcelBase::cellFormat in ExcelBase.cpp (src\fastReadExcelInWindows) :         range->setProperty("NumberFormatLocal", format);
+ExcelBase::cellAlign in ExcelBase.cpp (src\fastReadExcelInWindows) :         range->setProperty("HorizontalAlignment", hAlign);
+ExcelBase::cellAlign in ExcelBase.cpp (src\fastReadExcelInWindows) :         range->setProperty("VerticalAlignment",   vAlign);
+ExcelBase::write in ExcelBase.cpp (src\fastReadExcelInWindows) :         range->setProperty("Value", value);
+ExcelBase::writeCurrentSheet in ExcelBase.cpp (src\fastReadExcelInWindows) :     succ = range->setProperty("Value", var);

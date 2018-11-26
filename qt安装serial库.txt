@@ -1,0 +1,9 @@
+打开QSerialPort工程
+首先确认您电脑上有可以正常使用的Qt4版本，我这里用的是Qt4.8.6.
+
+解压下载的qtserialport-opensource-src-5.3.2.rar，会发现一个qtserialport.pro，打开它。
+
+选择项目，在构建步骤中选择“添加构建步骤->Make”
+在Make参数这一栏里输入“install”
+搞定，现在点击项目中的“构建”，就会编译，然后把QSerialPort库安装到你的Qt4里面。
+这是Debug版本，然后Release版本也是一样做的
